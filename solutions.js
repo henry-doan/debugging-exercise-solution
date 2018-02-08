@@ -8,7 +8,8 @@ function main() {
   areYouOldEnough()
   favoritNum()
   looping()
-  display()
+  // change this method name
+  myDisplay()
   suprise()
   zero()
   ten()
@@ -25,19 +26,24 @@ function main() {
 main()
 
 // Try to debug below
-function sum(a) {
+// missing parameter of b
+function sum(a, b) {
   return a + b
 }
 
-function difference(a b) {
+// needed a coma in the parameter
+function difference(a, b) {
   return a - b
 }
 
+// ending a function is with a barrack
 function product(a, b) {
-  return a - b
-end function
+  // should multiply instead of subtract
+  return a * b
+}
 
-method getFirstWord(sentence) {
+// functions are invoked with the word function instead of method
+function getFirstWord(sentence) {
   var word = sentence.split(" ")
   return word[0]
 }
@@ -46,7 +52,8 @@ function ageInput() {
   input = prompt("what is your age?");
 
   if (input >= '18') {
-    prompt( "you are now old enough to reach the keyboard!")
+    // change to a alert
+    alert( "you are now old enough to reach the keyboard!")
   } else {
     ageInput()
   }
@@ -55,34 +62,40 @@ function ageInput() {
 function areYouOldEnough() {
   var input = prompt("what is your age?");
 
-  if (input === '18') {
-    prompt("yes you are")
+  // should be greater than or equals for input
+  if (input >= '18') {
+    alert("yes you are")
   } else {
-    ageInput()
+    // should call the function we are in instead of calling another function
+    areYouOldEnough()
   }
 }
 
 function favoritNum() {
   var input = prompt("what is your favorite number");
 
-  alert(input + 5)
+  // we just need to print out the number
+  alert(input)
 }
 
 function looping() {
-  while(true) {
-    alert("I should only run once")
-  }
+  // take out the while loop becasue it causes a infinite loop
+  alert("I should only run once")
 }
 
-function display() {
-  var message = document.getELemental1d('display')
+// rename display because display is a reserved word
+function myDisplay() {
+  // should be getElementById
+  var message = document.getElementById('display')
 
-  massage.innerHTML('hello world')
+  // typo 
+  message.innerHTML += 'hello world'
 }
 
 function suprise() {
   var x = 0
-  if (x == 10); 
+  // 0 is binary for false so this if is never true
+  if (x != 10) 
     alert("That one was a tough cookie")
   else
     alert("you should make the condition be true")
@@ -90,13 +103,14 @@ function suprise() {
 
 function zero() {
   var x = 0
-  if (x = 0)
+  // making the condition true instead of re assigning x
+  if (x == 0)
     alert("You are not a 0")
   else
     alert("you should make the condition be true")
 }
 
-<!-- this is a js comment -->
+// this is a js comment 
 
 function ten() {
   var x = 10;
@@ -112,7 +126,8 @@ function isThisMath() {
   var y = "5";
   var z = x + y; 
 
-  if(z === 15) 
+  // it will concatenate x and y and put them together
+  if(z === "105") 
     alert("Yes! you know math!")
   else
     alert("I don't think thats how math works")
@@ -125,29 +140,30 @@ function floats() {
   var y = 0.2
   var z = x + y 
 
-  if (z == 0.3)
+  // floats work super differently than what math really is
+  if (z == 0.30000000000000004)
     alert("Yes! you know float!")
   else
     alert("Good luck finding the problem")
 }
 
 function strings(){
-  var x = "Hello 
-  World!";
+  // making a variable will work all in one line
+  var x = "Hello World!";
 
-  consoleLog(x)
+  console.log(x)
 }
 
 function power(x) {
-  var
-    power = 10;
-  return
-  x * power;
+  // making a variable will work all in one line
+  var power = 10;
+  return x * power;
 }
 
+// here is the correct sytax for this function
 function scope(){
   for (var i = 0; i < 10; i++) {
-    i+ +;
+    i++;
   }
   return i;
 }
